@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+	<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Boolflix</title>
+</head>
+
+<body>
+
+	<!-- logo + filter + search -->
+	<header>
+		<div class="container">
+			<div class="logo">
+				<h1>Boolflix</h1>
+				<h5>The Movie DB</h5>
+			</div>
+			<div id="filter">
+				<button id="filter-btn">Filtra per genere</button>
+				<ul id="filter-dropdown">
+				</ul>
+			</div>
+			<div class="search">
+				<input type="text" id="input" placeholder="Inserisci titolo">
+				<button id="search-btn"><i class="fas fa-search"></i></button>
+			</div>
+		</div>
+	</header>
+
+	<!-- container x lista movie -->
+	<section class="collection">
+		<div id="list">
+			<div id="movie-list">
+				<!-- <button class="scroll-left"><i class="fas fa-chevron-left"></i></button>
+				<button class="scroll-right"><i class="fas fa-chevron-right"></i></button> -->
+			</div>
+			<div id="tv-list">
+				<!-- <button class="scroll-left"><i class="fas fa-chevron-left"></i></button>
+				<button class="scroll-right"><i class="fas fa-chevron-right"></i></button> -->
+			</div>
+		</div>
+	</section>
+
+
+	<!-- handlebars template script -->
+	<script id="entry-template" type="text/x-handlebars-template">
+	  <ul class="item" data-id="{{idMovie}}">
+		<div class="poster">
+			<img src="{{{poster}}}" alt="{{title}}">
+			<div class="poster-type">{{tipo}}</div>
+		</div>
+		<li class="title"><h2>{{title}}</h2></li>
+		<li class="original-title"><span>Titolo Originale: </span>{{original_title}}</li>
+		<li class="original-language"><span>Lingua Originale: </span>{{{original_language}}}
+		</li>
+		<li class="vote-average"><span  data-id="{{id}}">Voto Medio: </span>{{{vote_average}}}</li>
+		<li class="genere"><span>Genere: </span><span class="genere-span"></span></li>
+		<li class='attori'><span>Attori: </span></li>
+		<li class="overview"><p>{{overview}}</p></li>
+	</ul>
+</script>
+
+	<script src="js/script.js" charset="utf-8"></script>
+
+</body>
+
+</html>
